@@ -88,9 +88,7 @@
               <div class="input-group">
                 <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
                 <span class="input-group-btn">
-                   <b-button v-b-modal.modal-1>Generar Contrato</b-button>
-                            <button class="btn btn-warning btn-sm" id="btn-chat">
-                                Send</button>
+                   <b-button v-b-modal.modal-1 @click=validarWallet>Generar Contrato</b-button>
                         </span>
               </div>
             </div>
@@ -100,7 +98,7 @@
     </div>
     <!-- Button trigger modal -->
 
-    <b-modal id="modal-1" title="Contrato" @ok="handleOk" >
+    <b-modal id="modal-1" title="Contrato" @ok="GenerarContrato" ok-title-html="Crear" >
       <b-container fluid>
         <b-row>
           <div class="center">Objeto a prestar</div>
@@ -124,7 +122,7 @@
           <b-col class="center">Direccion de entrega</b-col>
         </b-row>
         <b-row >
-          <b-col xs="6"><b-input type="text"></b-input></b-col>
+          <b-col xs="6"><b-input v-model=direccion type="text"></b-input></b-col>
         </b-row>
         <b-row>
           <b-col class="center">Direccion devolucion</b-col>
@@ -144,18 +142,18 @@
           <b-input type="text" ></b-input>
         </b-col>
         </b-row>
-      </b-container>
 
+      </b-container>
     </b-modal >
     <router-view></router-view>
   </div>
-</template>
+</template>x
 
 <script>
 const Web3 = require('web3');
+
 // Variables
 let web3;
-let from;
 
 // Elements
 
@@ -163,33 +161,39 @@ export default {
   name: "ChatView",
   data() {
     return {
-      pruebas: "hola"
+      pruebas: "",
+      direccion:"",
+
     }
   },
   methods: {
-    handleOk: async function (bvModalEvent) {
+    validarWallet: async function () {
       // Prevent modal from closing
-      bvModalEvent.preventDefault()
+
       // Trigger submit handler
       if (window.ethereum) {
         web3 = new Web3(window.ethereum);
 
         try {
           await window.ethereum.request({method: 'eth_requestAccounts'});
-          
+
 
           const accounts = await web3.eth.getAccounts();
 
-          from = accounts[0];
+          this.pruebas = accounts[0];
 
-          account.innerText = from;
         } catch (err) {
           alert('Please accept the request');
         }
       }
+    },
+    GenerarContrato: async function (bvModalEvent) {
+      bvModalEvent.preventDefault()
+      console.log(this.pruebas)
+      }
     }
   }
-}
+
 </script>
 
 <style scoped>
