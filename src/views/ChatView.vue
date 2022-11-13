@@ -89,9 +89,7 @@
               <div class="input-group">
                 <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
                 <span class="input-group-btn">
-                   <b-button v-b-modal.modal-1>Generar Contrato</b-button>
-                            <button class="btn btn-warning btn-sm" id="btn-chat">
-                                Send</button>
+                   <b-button v-b-modal.modal-1 @click=validarWallet>Generar Contrato</b-button>
                         </span>
               </div>
             </div>
@@ -101,7 +99,7 @@
     </div>
     <!-- Button trigger modal -->
 
-    <b-modal id="modal-1" title="Vue Js Bootstrap Modal Example">
+    <b-modal id="modal-1" title="Vue Js Bootstrap Modal Example" @ok="GenerarContrato">
       <b-container fluid>
         <b-row>
           <div class="center">Objeto a prestar</div>
@@ -154,14 +152,91 @@
 <script>
 
 import HomeComponent from "@/components/HomeComponent.vue";
+import { ethers } from "ethers";
+const Web3 = require('web3');
+import abi from '@/abi.json'
+// Variables
 
 export default {
-  name: "ChatView",
-  components: {
-    HomeComponent,
-  },
+    name: "ChatView",
+    components: {
+      HomeComponent,
+    },
+  data() {
+  return {
+  to:"",
+
+
+  transactionHash:"",
+  from: "gaga",
+      obj:"agag",
+      fechaE:"agagag",
+      fechaD:"sgagsa",
+      direccionE:"gasgew",
+      direccionD:"geagege",
+    delegates:"simon",
+    prestador:"pedro",
+    garantia:12
+  }
+},
+  mounted() {
+  this.fecha = new Date().toJSON().slice(0, 10);
+},
+  methods: {
+  validarWallet: async function () {
+  // Prevent modal from closing
+
+  // Trigger submit handler
+  if (window.ethereum) {
+  let web3 = new Web3(window.ethereum);
+
+
+  try {
+   web3 = await window.ethereum.request({method: 'eth_requestAccounts'});
+  this.from = web3[0];
+  window.localStorage.setItem('wallet',this.from)
+  console.log(this.from)
+
+
+} catch (err) {
+  alert('Please accept the request');
 }
+}
+},
+  GenerarContrato: async function (bvModalEvent) {
+    let address = "0xC2B9Acb048476f410aB9c9Ed75BEC902408775f0"
+
+  bvModalEvent.preventDefault()
+   const wallet = window.localStorage.getItem('wallet');
+    console.log("aqui"+wallet)
+    const provider = new ethers.providers.Web3Provider(window.ethereum)
+  var contract = new ethers.Contract( address , abi , provider.getSigner() )
+    console.log(abi)
+    await contract.setData(this.garantia,
+        wallet,
+        address)
+    const setClient = await contract.estimateGas.setSenderData( this.obj,
+        this.fechaE,
+        this.fechaD,
+        this.direccionE,
+        this.direccionD)
+    await contract.estimateGas.setReciverData(
+        this.obj,
+        this.fechaE,
+        this.fechaD,
+        this.direccionE,
+        this.direccionD)
+   const getter = await contract.getSenderData()
+    const getter2 = await contract.populateTransaction.send()
+    console.log(contract)
+    console.log(getter2)
+    console.log(setClient)
+}
+}
+}
+
 </script>
+
 
 <style scoped>
   .center{

@@ -1,0 +1,273 @@
+[
+	{
+		"inputs": [],
+		"name": "send",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_garantia",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_prestador",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_delegate",
+				"type": "address"
+			}
+		],
+		"name": "setData",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_objeto",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_fechaEntrega",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_fechaDevolucion",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_direccionEntrega",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_direccionDevolucion",
+				"type": "string"
+			}
+		],
+		"name": "setReciverData",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_objeto",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_fechaEntrega",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_fechaDevolucion",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_direccionEntrega",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_direccionDevolucion",
+				"type": "string"
+			}
+		],
+		"name": "setSenderData",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"stateMutability": "payable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [],
+		"name": "company",
+		"outputs": [
+			{
+				"internalType": "address payable",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "data",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "objeto",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "fechaEntrega",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "fechaDevolucion",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "direccionEntrega",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "direccionDevolucion",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "garantia",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "delegate",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "prestador",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getReciverData",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "_objeto",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_fechaEntrega",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_fechaDevolucion",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_direccionEntrega",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_direccionDevolucion",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_garantia",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_delegates",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_prestador",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getSenderData",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "_objeto",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_fechaEntrega",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_fechaDevolucion",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_direccionEntrega",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_direccionDevolucion",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_garantia",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_delegates",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_prestador",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "reciver",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
