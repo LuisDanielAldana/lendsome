@@ -28,11 +28,13 @@
 
     <img class="card-img-bottom" src="../assets/juego.jpg">
   </div>
+  <div style="height: 30px "></div>
+
   <div class="card">
     <ul class="list-unstyled mb-0">
       <li class="p-2">
         <a class="d-flex justify-content-between">
-          <div class="d-flex flex-row">
+          <div class="d-flex flex-row" style="padding: 20px 30px">
             <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-5.webp" alt="avatar"
                  class="rounded-circle d-flex align-self-center me-3 shadow-1-strong" width="60">
             <div class="pt-1">
@@ -47,22 +49,22 @@
       </li>
     </ul>
 
-    <div class="card-body">
+    <div class="card-body" style="padding:10px 50px; text-align: start;">
       Busco una bicicleta que me puedan prestar, para el fin de semana.
     </div>
 
 <!--    <img class="card-img-bottom" src="../assets/juego.jpg">-->
   </div>
-
-  <div class="card">
+  <div style="height: 30px "></div>
+  <div class="card" style="padding: 20px 0">
     <ul class="list-unstyled mb-0">
       <li class="p-2">
         <a class="d-flex justify-content-between">
-          <div class="d-flex flex-row">
+          <div class="d-flex flex-row" style="padding: 20px 30px">
             <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-2.webp" alt="avatar"
                  class="rounded-circle d-flex align-self-center me-3 shadow-1-strong" width="60">
             <div class="pt-1">
-              <p class="fw-bold mb-0">Alex Steward</p>
+              <p class="fw-bold mb-0" style="text-align: left;">Alex Steward</p>
               <p class="small text-muted texto">20/11/2022 3:15pm</p>
             </div>
           </div>
@@ -73,13 +75,14 @@
       </li>
     </ul>
 
-    <div class="card-body">
+    <div class="card-body" style="padding:10px 50px; text-align: start;">
       Alguien tendra una sierra como la de la imagen que me pueda prestar. Me urge!!!
     </div>
 
         <img class="card-img-bottom" src="../assets/sierra.png">
   </div>
 </div>
+<div style="height: 100px "></div>
 
 <b-modal id="modal-1" title="Mandar ofrecimiento de prestamo" ok-title-html="Enviar ofrecimiento">
       
@@ -109,6 +112,7 @@ export default {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+  margin-bottom: 20px;
   height: 50%;
   padding-top: 15px;
   max-width: 300px;
@@ -118,7 +122,7 @@ export default {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-}
+} 
 .card-body {
   font-weight: 400;
   font-size: 20px;

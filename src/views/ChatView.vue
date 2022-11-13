@@ -100,38 +100,38 @@
     <!-- Button trigger modal -->
 
 
-    <b-modal id="modal-1" title="Vue Js Bootstrap Modal Example" @ok="GenerarContrato">
+    <b-modal id="modal-1" title="Contrato" @ok="GenerarContrato">
       <b-container fluid>
 
         <b-row>
-          <div class="center">Objeto a prestar</div>
+          <div class="center" >Objeto a prestar</div>
         </b-row>
         <b-row >
-        <b-col><b-input type="text"></b-input></b-col>
+        <b-col><b-input type="text" v-model="obj"></b-input></b-col>
       </b-row>
         <b-row>
-          <b-col class="center">Fecha de prestamo</b-col>
           <b-col class="center">Fecha de entrega</b-col>
+          <b-col class="center">Fecha de devolucion</b-col>
         </b-row>
       <b-row>
         <b-col>
-          <b-input type="text"></b-input>
+          <b-input type="date" v-model="fechaE" :value = "fechaE"></b-input>
         </b-col>
         <b-col>
-          <b-input type="text"></b-input>
+          <b-input type="date" v-model="fechaD"></b-input>
         </b-col>
       </b-row>
         <b-row>
           <b-col class="center">Direccion de entrega</b-col>
         </b-row>
         <b-row >
-          <b-col xs="6"><b-input type="text"></b-input></b-col>
+          <b-col xs="6"><b-input type="text" v-mdoel="direccionE"></b-input></b-col>
         </b-row>
         <b-row>
           <b-col class="center">Direccion devolucion</b-col>
         </b-row>
         <b-row >
-          <b-col xs="6"><b-input type="text"></b-input></b-col>
+          <b-col xs="6"><b-input type="text" v-mdoel="direccionD"></b-input></b-col>
         </b-row>
         <b-row>
           <b-col class="center">Prestador</b-col>
@@ -139,10 +139,10 @@
         </b-row>
         <b-row>
         <b-col>
-          <b-input type="select"></b-input>
+          <b-input type="text"></b-input>
         </b-col>
         <b-col>
-          <b-input type="text"></b-input>
+          <b-input type="number" v-mdoel="garantia"></b-input>
         </b-col>
         </b-row>
       </b-container>
@@ -170,19 +170,19 @@ export default {
 
 
   transactionHash:"",
-  from: "gaga",
-      obj:"agag",
-      fechaE:"agagag",
-      fechaD:"sgagsa",
-      direccionE:"gasgew",
-      direccionD:"geagege",
-    delegates:"simon",
-    prestador:"pedro",
-    garantia:12
+  from: "",
+      obj:"",
+      fechaE:"",
+      fechaD:"",
+      direccionE:"",
+      direccionD:"",
+    delegates:"",
+    prestador:"",
+    garantia:0
   }
 },
   mounted() {
-  this.fecha = new Date().toJSON().slice(0, 10);
+  this.fechaE = new Date().toJSON().slice(0, 10);
 },
   methods: {
   validarWallet: async function () {

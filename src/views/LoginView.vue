@@ -7,14 +7,18 @@
       <!-- Email input -->
       <label for="form" style="font-size: 25px">Inicio de sesion</label>
       <div class="form-outline mb-4">
+
         <label class="form-label" for="form2Example1">Nombre de ususario</label>
+        <p>samuelCasas</p>
         <input v-model="userName" type="text" class="form-control" />
 
       </div>
 
       <!-- Password input -->
       <div class="form-outline mb-4">
+
         <label class="form-label" for="form2Example2">Contraseña</label>
+        <p>samuel123</p>
         <input type="password" v-model="userPass" id="form2Example2" class="form-control" />
 
       </div>
