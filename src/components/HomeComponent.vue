@@ -3,19 +3,19 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light grid">
   
         <div class="grid-item-logo">
-          <img src="../assets/lendsome.png" width="175" height="35" class="d-inline-block align-top" alt="">
+          <a href="/"><img src="../assets/lendsome.png" width="175" height="35" class="d-inline-block align-top" alt=""></a>
         </div>
 
         <div class="menu-items"> 
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0 grid-item" style="justify-content: center;">
             <li class="item">
-              <a class="link">Inicio</a>
+              <a class="link" style="font-weight: 400;">Inicio</a>
             </li>
             <li class="item">
-              <a class="link">Mis Prestamos</a>
+              <a class="link" style="font-weight: 400;">Mis prestamos</a>
             </li>
             <li class="item">
-              <a class="link">En Posecion</a>
+              <a class="link" style="font-weight: 400;">En posesión</a>
             </li>
 
           </ul>
