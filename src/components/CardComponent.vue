@@ -118,7 +118,7 @@ export default {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-}
+} 
 .card-body {
   font-weight: 400;
   font-size: 20px;
