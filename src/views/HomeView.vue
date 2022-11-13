@@ -5,9 +5,11 @@
         <div class="col">
           <h2>Chats</h2>
           <ul>
-            <li <a href=" ">Form1</a>>
+
+            <li>
               <h6 id="chats">Alex Montes</h6>
             </li>
+
             <li>
               <h6 id="chats">Mariana Gonzalez</h6>
             </li>
