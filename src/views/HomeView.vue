@@ -1,4 +1,5 @@
 <template>
+
   <div class="home">
     <HomeComponent/>
       <div class="row">
@@ -23,12 +24,9 @@
           <card-component/>
         </div>
         <div class="col">
-          3 of 3
+          
         </div>
       </div>
-
-
-
   </div>
 </template>
 
