@@ -25,7 +25,8 @@
         </div>
        <div class="grid-item-image">
         <img src="https://s.yimg.com/ny/api/res/1.2/.MQ1YM9XYAZ71GxZVIgOLg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQyNw--/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-images/2019-12/b60e4980-15f2-11ea-8ff7-66235022663d" class="imagen-chat img-circle" alt="User Avatar" />
-       </div>
+        
+      </div>
   
   </nav>
 

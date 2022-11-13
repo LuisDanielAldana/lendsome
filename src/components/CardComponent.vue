@@ -81,7 +81,7 @@
   </div>
 </div>
 
-<b-modal id="modal-1" title="Mandar odrecimiento de prestamo" ok-title-html="Enviar ofrecimiento">
+<b-modal id="modal-1" title="Mandar ofrecimiento de prestamo" ok-title-html="Enviar ofrecimiento">
       
       <b-container fluid >
         <b-row>
