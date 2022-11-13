@@ -32,7 +32,7 @@
                         </span>
                   <div class="chat-ind chat-body clearfix" style="margin-left:20px">
                     <div class="header grid">
-                      <strong class="primary-font">Jack Sparrow</strong> <small class="pull-right text-muted">
+                      <strong class="primary-font">John Doe</strong> <small class="pull-right text-muted">
                       <span class="glyphicon glyphicon-time"></span>12 mins ago</small>
                     </div>
                     <p>
@@ -58,7 +58,7 @@
                         </span>
                   <div class="chat-ind chat-body clearfix" style="margin-left:20px;">
                     <div class="header">
-                      <strong class="primary-font">Jack Sparrow</strong> <small class="pull-right text-muted">
+                      <strong class="primary-font">John Doe</strong> <small class="pull-right text-muted">
                       <span class="glyphicon glyphicon-time"></span>14 mins ago</small>
                     </div>
                     <p>

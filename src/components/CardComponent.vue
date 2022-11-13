@@ -1,4 +1,7 @@
 <template>
+<div>
+
+
 <div class="container">
   <div class="card">
     <ul class="list-unstyled mb-0">
@@ -27,18 +30,19 @@
   </div>
 </div>
 
-<b-modal id="modal-1" title="Mandar odrecimiento de prestamo" >
+<b-modal id="modal-1" title="Mandar odrecimiento de prestamo" ok-title-html="Enviar ofrecimiento">
       
       <b-container fluid >
         <b-row>
-          <div class="center">Agrega un mensaje a tu ofrecimiento:)</div>
+          <div class="center" style="width:296px; padding-bottom: 10px;">Agrega un mensaje a tu ofrecimiento:)</div>
         </b-row>
         <b-row >
-        <b-col><b-input type="textfield"></b-input></b-col>
+        <b-col><b-input type="text" style="height: 100px;" placeholder="Escribe tu mensaje..."></b-input></b-col>
       </b-row>
       </b-container>
     </b-modal>
     <router-view></router-view>
+  </div>
 </template>
 
 <script>
