@@ -63,7 +63,7 @@
                                  class="rounded-circle d-flex align-self-center me-3 shadow-1-strong" width="60">
                             <div class="pt-1">
                               <p class="fw-bold mb-0 names-msg">Ashley Olsen</p>
-                              <p class="small text-muted">Lorem ipsum dolor sit.</p>
+                              <p class="small text-muted">Suuuper!!</p>
                             </div>
                           </div>
                           <div class="pt-1">
@@ -78,7 +78,7 @@
                                  class="rounded-circle d-flex align-self-center me-3 shadow-1-strong" width="60">
                             <div class="pt-1">
                               <p class="fw-bold mb-0 names-msg">Kate Moss</p>
-                              <p class="small text-muted">Lorem ipsum dolor sit.</p>
+                              <p class="small text-muted">el lunes lo entrego</p>
                             </div>
                           </div>
                           <div class="pt-1">
@@ -93,7 +93,7 @@
                                  class="rounded-circle d-flex align-self-center me-3 shadow-1-strong" width="60">
                             <div class="pt-1">
                               <p class="fw-bold mb-0 names-msg">Lara Croft</p>
-                              <p class="small text-muted">Lorem ipsum dolor sit.</p>
+                              <p class="small text-muted">saleee!</p>
                             </div>
                           </div>
                           <div class="pt-1">
@@ -108,7 +108,7 @@
                                  class="rounded-circle d-flex align-self-center me-3 shadow-1-strong" width="60">
                             <div class="pt-1">
                               <p class="fw-bold mb-0 names-msg" style="text-decoration:none">Brad Pitt</p>
-                              <p class="small text-muted">Lorem ipsum dolor sit.</p>
+                              <p class="small text-muted">Gracias por todo!</p>
                             </div>
                           </div>
                           <div class="pt-1">
@@ -133,9 +133,9 @@
           <div style="width: 500px; margin-left: 170px">
             <div class="input-group mb-3">
 
-              <input type="text" class="form-control" style="border-color: #2B0649;height: 45px; -moz-border-radius: 20px;-webkit-border-radius: 20px;" placeholder="Buscar..." aria-label="Recipient's username" aria-describedby="basic-addon2">
-              <div class="input-group-append w-50"  style="width: fit-content !important;">
-                <button class="btn btn-outline-secondary" style="border: transparent; border-color: #2B0649" type="button"><i class="fas fa-search"></i></button>
+              <input type="text" class="form-control" style="border-color: #2B0649;height: 45px; -moz-border-radius: 20px;-webkit-border-radius: 20px; position: relative;" placeholder="Buscar..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+              <div class="input-group-append w-50"  style="width: fit-content !important;position: absolute;top: 6px;">
+                <i class="fas fa-search" style="left: 470px;top: 7px; position: absolute; z-index: 20000px;"></i>
               </div>
             </div>
           </div>
