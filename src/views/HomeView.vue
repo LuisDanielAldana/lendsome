@@ -1,23 +1,61 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-    <div class="input-group rounded">
-      <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-      <span class="input-group-text border-0" id="search-addon">
-    <i class="fas fa-search"></i>
-  </span>
-    </div>
+    <HomeComponent/>
+      <div class="row">
+        <div class="col">
+          <h2>Chats</h2>
+          <ul>
+            <li <a href=" ">Form1</a>>
+              <h6 id="chats">Alex Montes</h6>
+            </li>
+            <li>
+              <h6 id="chats">Mariana Gonzalez</h6>
+            </li>
+          </ul>
+        </div>
+        <div class="col-6">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Buscar..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button">Buscar</button>
+            </div>
+          </div>
+          <card-component/>
+        </div>
+        <div class="col">
+          3 of 3
+        </div>
+      </div>
+
+
+
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HomeComponent.vue";
+import HomeComponent from "@/components/HomeComponent.vue";
+import CardComponent from "@/components/CardComponent";
 
 export default {
   name: "HomeView",
   components: {
-    HelloWorld,
+    HomeComponent,
+    CardComponent
   },
 };
 </script>
+
+<style scoped>
+#chats {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 44px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+ul {
+  list-style-type: none;
+}
+</style>
