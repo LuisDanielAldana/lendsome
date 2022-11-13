@@ -104,7 +104,7 @@
           <div class="center">Objeto a prestar</div>
         </b-row>
         <b-row >
-        <b-col><b-input type="text" :placeholder=pruebas></b-input></b-col>
+        <b-col><b-input type="text" v-model="obj"></b-input></b-col>
       </b-row>
         <b-row>
           <b-col class="center">Fecha de prestamo</b-col>
@@ -112,23 +112,23 @@
         </b-row>
       <b-row>
         <b-col>
-          <b-input type="text"></b-input>
+          <b-input type="date"  :value="fecha" ></b-input>
         </b-col>
         <b-col>
-          <b-input type="text"></b-input>
+          <b-input type="date"  ></b-input>
         </b-col>
       </b-row>
         <b-row>
           <b-col class="center">Direccion de entrega</b-col>
         </b-row>
         <b-row >
-          <b-col xs="6"><b-input v-model=direccion type="text"></b-input></b-col>
+          <b-col xs="6"><b-input  type="text"></b-input></b-col>
         </b-row>
         <b-row>
           <b-col class="center">Direccion devolucion</b-col>
         </b-row>
         <b-row >
-          <b-col xs="6"><b-input type="text"></b-input></b-col>
+          <b-col xs="6"><b-input type="text" v-model="jsonInterface.direccion"></b-input></b-col>
         </b-row>
         <b-row>
           <b-col class="center">Cobro por prestamo</b-col>
@@ -151,7 +151,6 @@
 
 <script>
 const Web3 = require('web3');
-
 // Variables
 let web3;
 
@@ -161,10 +160,19 @@ export default {
   name: "ChatView",
   data() {
     return {
-      pruebas: "",
-      direccion:"",
+      to:"",
+      obj:"",
+      fecha:"",
+      transactionHash:"",
+      from: "",
+      jsonInterface:{
+          direccion:""
+      }
 
     }
+  },
+  mounted() {
+    this.fecha = new Date().toJSON().slice(0, 10);
   },
   methods: {
     validarWallet: async function () {
@@ -174,13 +182,12 @@ export default {
       if (window.ethereum) {
         web3 = new Web3(window.ethereum);
 
+
         try {
-          await window.ethereum.request({method: 'eth_requestAccounts'});
+          const wallets = await window.ethereum.request({method: 'eth_requestAccounts'});
+          this.from = wallets[0];
+          console.log(this.from)
 
-
-          const accounts = await web3.eth.getAccounts();
-
-          this.pruebas = accounts[0];
 
         } catch (err) {
           alert('Please accept the request');
@@ -189,9 +196,10 @@ export default {
     },
     GenerarContrato: async function (bvModalEvent) {
       bvModalEvent.preventDefault()
-      console.log(this.pruebas)
-      }
+      console.log(this.from)
+
     }
+  }
   }
 
 </script>
