@@ -9,7 +9,7 @@
         <div class="menu-items"> 
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0 grid-item" style="justify-content: right;">
             <li class="item">
-              <a class="link" style="font-weight: 400; padding: 0 45px;">Inicio</a>
+              <a href="/" class="link" style="font-weight: 400; padding: 0 45px;">Inicio</a>
             </li>
             <li class="item">
               <a class="link" style="font-weight: 400; padding: 0 45px;">Mis prestamos</a>

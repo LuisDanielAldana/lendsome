@@ -143,7 +143,14 @@
 
         </div>
         <div class="col">
-
+          <h5 class="font-weight-bold mb-3 text-center text-lg-start" style="padding: 36px 34px 0px 46px;text-align: right !important;">Crear una publicación</h5>
+          <div>
+            <input type="textfield" class="ph" style="width: 90%;height: 250px;border-color: #C5CFF3;border-top-left-radius: 18px;border-top-right-radius: 18px;" placeholder="¿Buscabas algo?">
+          </div>
+          <div>
+            <button style="width: 90%;height: 50px;background: #7E8DDF;border-color: transparent;color: #fff;font-size: 20px;font-weight: 600;border-bottom-left-radius: 18px;border-bottom-right-radius: 18px;">Publicar</button>
+          </div>
+            
         </div>
       </div>
   </div>
@@ -171,6 +178,11 @@ export default {
   display: flex;
   align-items: center;
   text-align: center;
+}
+
+.ph::placeholder{
+  text-align: center;
+
 }
 .botton-solicitud {
   background-color: #7E8DDF;
