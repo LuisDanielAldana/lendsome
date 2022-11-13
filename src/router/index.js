@@ -4,6 +4,7 @@ import VueRouter from "vue-router";
 import ChatView from "../views/ChatView"
 import HomeView from "@/views/HomeView";
 import LoginView from "@/views/LoginView";
+import RegisterView from "@/views/RegisterView";
 
 Vue.use(VueRouter);
 
@@ -19,6 +20,11 @@ const routes = [
     //     component: ChatView
     //   },
     // ],
+  },
+  {
+    path: "/register",
+    name: "register",
+    component: RegisterView
   },
   {
     path: "/home",
