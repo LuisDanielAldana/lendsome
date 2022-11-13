@@ -1,14 +1,15 @@
 <template>
   <div>
+    <home-component></home-component>
     <div>
       <div class="row">
         <div>
           <div class="panel panel-primary">
             <div class="panel-heading">
               <div class="btn-group pull-right">
-                <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
-                  <span class="glyphicon glyphicon-chevron-down"></span>
-                </button>
+<!--                <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">-->
+<!--                  <span class="glyphicon glyphicon-chevron-down"></span>-->
+<!--                </button>-->
                 <ul class="dropdown-menu slidedown">
                   <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-refresh">
                             </span>Refresh</a></li>
@@ -151,8 +152,14 @@
 </template>
 
 <script>
+
+import HomeComponent from "@/components/HomeComponent.vue";
+
 export default {
-  name: "ChatView"
+  name: "ChatView",
+  components: {
+    HomeComponent,
+  },
 }
 </script>
 

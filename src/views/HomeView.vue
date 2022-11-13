@@ -5,12 +5,10 @@
         <div class="col">
           <h2>Chats</h2>
           <ul>
-
-            <li>
+            <li @click="$router.push('chat')">
               <h6 id="chats">Alex Montes</h6>
             </li>
-
-            <li>
+            <li >
               <h6 id="chats">Mariana Gonzalez</h6>
             </li>
           </ul>

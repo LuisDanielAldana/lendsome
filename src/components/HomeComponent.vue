@@ -15,13 +15,12 @@
         <li class="nav-item">
           <a class="nav-link">En Posecion</a>
         </li>
-        <li class="nav-item">
-          <router-link class="dropdown-item" :to="{name: 'ChatView'}">Favoritos</router-link>
-        </li>
       </ul>
     </div>
   </nav>
-  
+
+<!--    <router-link class="dropdown-item" :to="{name: 'ChatView'}">Favoritos</router-link>-->
+<!--    <router-view></router-view>-->
 
 </template>
 
