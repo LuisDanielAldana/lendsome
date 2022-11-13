@@ -1,15 +1,14 @@
 <template>
   <div>
-    <home-component></home-component>
     <div>
       <div class="row">
         <div>
           <div class="panel panel-primary">
             <div class="panel-heading">
               <div class="btn-group pull-right">
-<!--                <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">-->
-<!--                  <span class="glyphicon glyphicon-chevron-down"></span>-->
-<!--                </button>-->
+                <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                  <span class="glyphicon glyphicon-chevron-down"></span>
+                </button>
                 <ul class="dropdown-menu slidedown">
                   <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-refresh">
                             </span>Refresh</a></li>
@@ -89,9 +88,7 @@
               <div class="input-group">
                 <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
                 <span class="input-group-btn">
-                   <b-button v-b-modal.modal-1>Generar Contrato</b-button>
-                            <button class="btn btn-warning btn-sm" id="btn-chat">
-                                Send</button>
+                   <b-button v-b-modal.modal-1 @click=validarWallet>Generar Contrato</b-button>
                         </span>
               </div>
             </div>
@@ -101,129 +98,173 @@
     </div>
     <!-- Button trigger modal -->
 
-    <b-modal id="modal-1" title="Vue Js Bootstrap Modal Example">
+    <b-modal id="modal-1" title="Contrato" @ok="GenerarContrato" ok-title-html="Crear" >
       <b-container fluid>
         <b-row>
           <div class="center">Objeto a prestar</div>
         </b-row>
         <b-row >
-        <b-col><b-input type="text"></b-input></b-col>
-      </b-row>
+          <b-col><b-input type="text" v-model="obj"></b-input></b-col>
+        </b-row>
         <b-row>
           <b-col class="center">Fecha de prestamo</b-col>
           <b-col class="center">Fecha de entrega</b-col>
         </b-row>
-      <b-row>
-        <b-col>
-          <b-input type="text"></b-input>
-        </b-col>
-        <b-col>
-          <b-input type="text"></b-input>
-        </b-col>
-      </b-row>
+        <b-row>
+          <b-col>
+            <b-input type="date"  :value="fecha" ></b-input>
+          </b-col>
+          <b-col>
+            <b-input type="date"  ></b-input>
+          </b-col>
+        </b-row>
         <b-row>
           <b-col class="center">Direccion de entrega</b-col>
         </b-row>
         <b-row >
-          <b-col xs="6"><b-input type="text"></b-input></b-col>
+          <b-col xs="6"><b-input  type="text"></b-input></b-col>
         </b-row>
         <b-row>
           <b-col class="center">Direccion devolucion</b-col>
         </b-row>
         <b-row >
-          <b-col xs="6"><b-input type="text"></b-input></b-col>
+          <b-col xs="6"><b-input type="text" v-model="jsonInterface.direccion"></b-input></b-col>
         </b-row>
         <b-row>
           <b-col class="center">Cobro por prestamo</b-col>
           <b-col class="center">Garantia</b-col>
         </b-row>
         <b-row>
-        <b-col>
-          <b-input type="text"></b-input>
-        </b-col>
-        <b-col>
-          <b-input type="text"></b-input>
-        </b-col>
+          <b-col>
+            <b-input ></b-input>
+          </b-col>
+          <b-col>
+            <b-input type="text" ></b-input>
+          </b-col>
         </b-row>
+
       </b-container>
-    </b-modal>
+    </b-modal >
     <router-view></router-view>
   </div>
-</template>
+</template>x
 
 <script>
+const Web3 = require('web3');
+// Variables
 
-import HomeComponent from "@/components/HomeComponent.vue";
+
+// Elements
 
 export default {
   name: "ChatView",
-  components: {
-    HomeComponent,
+  data() {
+    return {
+      to:"",
+      obj:"",
+      fecha:"",
+      transactionHash:"",
+      from: "",
+      jsonInterface:{
+        direccion:""
+      }
+
+    }
   },
+  mounted() {
+    this.fecha = new Date().toJSON().slice(0, 10);
+  },
+  methods: {
+    validarWallet: async function () {
+      // Prevent modal from closing
+
+      // Trigger submit handler
+      if (window.ethereum) {
+       const web3 = new Web3(window.ethereum);
+
+
+        try {
+          const wallets = await window.ethereum.request({method: 'eth_requestAccounts'});
+          this.from = wallets[0];
+          console.log(this.from)
+
+
+        } catch (err) {
+          alert('Please accept the request');
+        }
+      }
+    },
+    GenerarContrato: async function (bvModalEvent) {
+      bvModalEvent.preventDefault()
+      console.log(this.from)
+
+    }
+  }
 }
+
 </script>
 
 <style scoped>
-  .center{
-    text-align: center;
-  }
-  .chat
-  {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+.center{
+  text-align: center;
+}
+.chat
+{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-  .chat li
-  {
-    margin-bottom: 10px;
-    padding-bottom: 5px;
-    border-bottom: 1px dotted #B3A9A9;
-  }
+.chat li
+{
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px dotted #B3A9A9;
+}
 
-  .chat li.left .chat-body
-  {
-    margin-left: 60px;
-  }
+.chat li.left .chat-body
+{
+  margin-left: 60px;
+}
 
-  .chat li.right .chat-body
-  {
-    margin-right: 60px;
-  }
+.chat li.right .chat-body
+{
+  margin-right: 60px;
+}
 
 
-  .chat li .chat-body p
-  {
-    margin: 0;
-    color: #777777;
-  }
+.chat li .chat-body p
+{
+  margin: 0;
+  color: #777777;
+}
 
-  .panel .slidedown .glyphicon, .chat .glyphicon
-  {
-    margin-right: 5px;
-  }
+.panel .slidedown .glyphicon, .chat .glyphicon
+{
+  margin-right: 5px;
+}
 
-  .panel-body
-  {
-    overflow-y: scroll;
-    height:800px;
-  }
+.panel-body
+{
+  overflow-y: scroll;
+  height:800px;
+}
 
-  ::-webkit-scrollbar-track
-  {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    background-color: #F5F5F5;
-  }
+::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
 
-  ::-webkit-scrollbar
-  {
-    width: 12px;
-    background-color: #F5F5F5;
-  }
+::-webkit-scrollbar
+{
+  width: 12px;
+  background-color: #F5F5F5;
+}
 
-  ::-webkit-scrollbar-thumb
-  {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-    background-color: #555;
-  }
+::-webkit-scrollbar-thumb
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #555;
+}
 </style>
