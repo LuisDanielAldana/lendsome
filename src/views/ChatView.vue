@@ -28,7 +28,7 @@
             <div class="panel-body">
               <ul class="chat">
                 <li class="left clearfix"><span class="chat-img pull-left">
-                            <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
+                            <img src="https://media.opticauniversitaria.es/media/wysiwyg/formas-de-cara/gafas-ovaladas.jpg"   alt="User Avatar" class="img-circle imagen-chat" />
                         </span>
                   <div class="chat-body clearfix">
                     <div class="header">
@@ -172,6 +172,10 @@ export default {
     list-style: none;
     margin: 0;
     padding: 0;
+    position:absolute; /*El div será ubicado con relación a la pantalla*/
+    left:0px; /*A la derecha deje un espacio de 0px*/
+    right:0px; /*A la izquierda deje un espacio de 0px*/
+    bottom:40px;
   }
 
   .chat li
@@ -198,6 +202,7 @@ export default {
     color: #777777;
   }
 
+  
   .panel .slidedown .glyphicon, .chat .glyphicon
   {
     margin-right: 5px;
@@ -206,7 +211,7 @@ export default {
   .panel-body
   {
     overflow-y: scroll;
-    height:800px;
+    height:725px;
   }
 
   ::-webkit-scrollbar-track
