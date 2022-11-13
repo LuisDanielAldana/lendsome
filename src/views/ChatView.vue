@@ -100,13 +100,13 @@
     </div>
     <!-- Button trigger modal -->
 
-    <b-modal id="modal-1" title="Vue Js Bootstrap Modal Example">
+    <b-modal id="modal-1" title="Contrato" @ok="handleOk" >
       <b-container fluid>
         <b-row>
           <div class="center">Objeto a prestar</div>
         </b-row>
         <b-row >
-        <b-col><b-input type="text"></b-input></b-col>
+        <b-col><b-input type="text" :placeholder=pruebas></b-input></b-col>
       </b-row>
         <b-row>
           <b-col class="center">Fecha de prestamo</b-col>
@@ -138,21 +138,57 @@
         </b-row>
         <b-row>
         <b-col>
-          <b-input type="text"></b-input>
+          <b-input ></b-input>
         </b-col>
         <b-col>
-          <b-input type="text"></b-input>
+          <b-input type="text" ></b-input>
         </b-col>
         </b-row>
       </b-container>
-    </b-modal>
+
+    </b-modal >
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+const Web3 = require('web3');
+// Variables
+let web3;
+let from;
+
+// Elements
+
 export default {
-  name: "ChatView"
+  name: "ChatView",
+  data() {
+    return {
+      pruebas: "hola"
+    }
+  },
+  methods: {
+    handleOk: async function (bvModalEvent) {
+      // Prevent modal from closing
+      bvModalEvent.preventDefault()
+      // Trigger submit handler
+      if (window.ethereum) {
+        web3 = new Web3(window.ethereum);
+
+        try {
+          await window.ethereum.request({method: 'eth_requestAccounts'});
+          
+
+          const accounts = await web3.eth.getAccounts();
+
+          from = accounts[0];
+
+          account.innerText = from;
+        } catch (err) {
+          alert('Please accept the request');
+        }
+      }
+    }
+  }
 }
 </script>
 
