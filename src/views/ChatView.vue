@@ -100,7 +100,7 @@
     <!-- Button trigger modal -->
 
 
-    <b-modal id="modal-1" title="Vue Js Bootstrap Modal Example" @ok="GenerarContrato">
+    <b-modal id="modal-1" title="Contrato" @ok="GenerarContrato">
       <b-container fluid>
 
         <b-row>
