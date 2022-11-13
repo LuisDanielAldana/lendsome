@@ -34,7 +34,7 @@
 
       <!-- Register buttons -->
       <div class="text-center">
-        <p>¿No tienes cuenta? <router-link to="/newuser">Registrate</router-link></p>
+        <p>¿No tienes cuenta? <router-link to="/register">Registrate</router-link></p>
       </div>
     </form>
   </div>
